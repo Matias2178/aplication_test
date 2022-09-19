@@ -24,6 +24,16 @@ class Person(db.Model):
             f'Photo: {self.photo}'
         )
 
+    def serialize(self):
+        return{
+            "Id": self.id,
+            "Name": self.name,
+            "Last_name": self.last_name,
+            "Email": self.email,
+            "Password": self.password,
+            "Photo": self.photo
+        }
+
 
 class Publication (db.Model):
     id = db.Column(db.Integer, primay_key=True, unique=True)
@@ -31,7 +41,7 @@ class Publication (db.Model):
     description = db.Column(db.String(256))
     priority = db.Column(db.String(10))
     status = db.Column(db.String(10))
-    time_published = db.Column(db.DateTime())
+    time_published = db.Column(db.String(40))
     user = db.Column(db.String(10))
     created_at = db.Column(db.DateTime())
     updated_at = db.Column(db.DateTime())
@@ -50,3 +60,19 @@ class Publication (db.Model):
             f'Updated_at: {self.updated_at}',
             f'Publication: {self.publication}'
         )
+
+    def serializer(self):
+        return {
+            "Id": self.id,
+            "Title": self.title,
+            "Description": self.description,
+            "Priority": self.priority,
+            "Status": self.status,
+            "Time_published": self.time_published,
+            "User": self.user,
+            "Created_at": self.created_at,
+            "Updated_at": self.updated_at,
+            "Publication": self.publication
+
+        }
+

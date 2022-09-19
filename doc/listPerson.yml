@@ -1,0 +1,66 @@
+summary: "List a Filtered User"
+description: "This is a simple API to filter user."
+consumes:
+- "application/json"
+produces:
+- "application/json"
+tags:
+  -
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts a input dictionary of user details"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      data:
+        type: "object"
+    example: {
+      "id": "string",
+      "name": "string",
+      "lastname": "string",
+    }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      properties:
+        data:
+          type: "object"
+          example: { {
+            "id": "string",
+            "name": "string",
+            "lastname": "string",
+            "email": "string",
+            "password": "string",
+            "photo": "binary"
+          }{
+            "id": "string",
+            "name": "string",
+            "lastname": "string",
+            "email": "string",
+            "password": "string",
+            "photo": "binary"
+          }
+          }
+        status:
+          type: "string"
+        message:
+          type: "string"
+  500:
+    description: "Error"
+    schema:
+      type: "msg"
+      properties:
+        data:
+          type: "msg"
+          example: {
+            "msg": "string",
+          }
+        status:
+          type: "string"
+        message:
+          type: "string"

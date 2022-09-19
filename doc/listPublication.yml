@@ -1,0 +1,72 @@
+summary: "List a User's Publications"
+description: "This is a simple API to a User's Publications."
+consumes:
+- "application/json"
+produces:
+- "application/json"
+tags:
+  -
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts a input dictionary of user details"
+  required: "false"
+  schema:
+    type: "object"
+    properties:
+      data:
+        type: "object"
+    example:
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      properties:
+        data:
+          type: "object"
+          example: { {
+            "id": "string",
+            "title": "string",
+            "description": "string",
+            "priority": "string",
+            "publication": "string",
+            "user": "string",
+            "status": "string",
+            "Time_published": "DateTime",
+            "User": "string",
+            "Created_at": "DateTime",
+            "Updated_at": "DateTime"
+            }{
+            "id": "string",
+            "title": "string",
+            "description": "string",
+            "priority": "string",
+            "publication": "string",
+            "user": "string",
+            "status": "string",
+            "Time_published": "DateTime",
+            "User": "string",
+            "Created_at": "DateTime",
+            "Updated_at": "DateTime"
+            }
+          }
+        status:
+          type: "string"
+        message:
+          type: "string"
+  500:
+    description: "Error"
+    schema:
+      type: "msg"
+      properties:
+        data:
+          type: "msg"
+          example: {
+            "msg": "string",
+          }
+        status:
+          type: "string"
+        message:
+          type: "string"
